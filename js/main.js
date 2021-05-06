@@ -312,26 +312,7 @@
 	});
 	    // form google
 		
-		function processHelp(e) {
-			var button = document.getElementById("help-button");
-		   button.innerText = "Inviato";
-		   document.getElementById("demo").innerHTML = "Ci spiace tu abbia riscontrato dei problemi con uno dei nostri progetti, grazie per averci scritto, ti risponderemo il prima possibile.";
-		   button.classList.add('sent');
-			setTimeout(function() {
-				hel.reset();
-			  }, 1000);
-		  button.text(function(i, text) {
-				return text === "Inviato!" ? "Invia" : "Inviato!";
-			});   
-	
-		}
-		
-		var hel = document.getElementById('help');
-		if (hel.attachEvent) {
-			hel.attachEvent("submit", processHelp);
-		} else {
-			hel.addEventListener("submit", processHelp);
-		}    
+
 
 		function processForm(e) {
 			var button = document.getElementById("submit-button");
@@ -370,9 +351,47 @@
 		} else {
 			rat.addEventListener("submit", processrating);
 		}    
+
+
+		function processhelp(e) {
+			var button = document.getElementById("help-button");
+			button.innerText = "Inviato";
+			button.classList.add('sent');
+			setTimeout(function() {
+				help.reset();
+			  }, 1000);
+			  button.text(function(i, text) {
+				return text === "Inviato!" ? "Invia" : "Inviato!";
+			});   
+		}
+		var help = document.getElementById('help');
+		if (help.attachEvent) {
+			help.attachEvent("submit", processhelp);
+		} else {
+			help.addEventListener("submit", processhelp);
+		}
+		/*
+		function processhelp(e) {
+			var button = document.getElementById("help-button");
+		   	button.innerText = "Inviato";
+		   	document.getElementById("demo").innerHTML = "Ci spiace tu abbia riscontrato dei problemi con uno dei nostri progetti, grazie per averci scritto, ti risponderemo il prima possibile.";
+		   	button.classList.add('sent');
+			setTimeout(function() {
+				hel.reset();
+			  }, 1000);
+		  button.text(function(i, text) {
+				return text === "Inviato!" ? "Invia" : "Inviato!";
+			});   
+	
+		}
+		
+		var hel = document.getElementById('help');
+		if (hel.attachEvent) {
+			hel.attachEvent("submit", processhelp);
+		} else {
+			hel.addEventListener("submit", processhelp);
+		}   
+		*/
 }());
 
-$( ".submit-button" ).click(function() {
-    $(this).html('Inviato');
- });
 
